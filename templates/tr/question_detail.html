@@ -12,7 +12,7 @@
             </div>
         </div>
     </div>
-    <h5 class="border-bottom my-3 py-2">{{question.answer_set.count}}개 답변이 있어용.</h5>
+    <h5 class="border-bottom my-3 py-2">{{question.answer_set.count}}개 답변이 있어요.</h5>
     {% for answer in question.answer_set.all %}
     <div class="card my-3">
         <div class="card-body">
@@ -27,6 +27,16 @@
     {% endfor %}
     <form action="{% url 'tr:answer_create' question.id %}" method="post" class="my-3">
         {% csrf_token %}
+        {% if form.errors %}
+        <div class="alert alert-danger" role="alert">
+        {% for field in form %}
+            {% if field.errors %}
+            <strong>{{ field.label }}</strong>
+            {{ field.errors }}
+            {% endif %}
+        {% endfor %}
+        </div>
+        {% endif %}
         <div class="form-group">
             <textarea name="content" id="content" class="form-control" rows="10"></textarea>
         </div>
