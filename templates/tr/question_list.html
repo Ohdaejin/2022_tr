@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load tr_filter %}
 {% block content %}
 <div class="container my-3">
     <table class="table">
@@ -13,7 +14,10 @@
         {% if question_list %}
         {% for question in question_list %}
         <tr>
-            <td>{{ forloop.counter }}</td>
+            <td>
+                <!-- 번호 = 전체건수 - 시작인덱스 - 현재인덱스 + 1 -->
+                {{ question_list.paginator.count|sub:question_list.start_index|sub:forloop.counter0|add:1 }}
+            </td>
             <td>
                 <a href="{% url 'tr:detail' question.id %}">{{ question.subject }}</a>
             </td>
@@ -65,6 +69,6 @@
         {% endif %}
     </ul>
     <!-- 페이징처리 끝 -->
-    <a href="{% url 'tr:question_create' %}" class="btn btn-primary">질문 등록하기</a>
+    <a href="{% url 'tr:question_create' %}" class="btn btn-primary">일정 등록하기</a>
 </div>
 {% endblock %}
