@@ -24,8 +24,9 @@
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Group</a>
         <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">make-group</a>
-          <a class="dropdown-item" href="#">my-group</a>
+          <a class="dropdown-item" href="{% url 'group:main' %}">group-main</a>
+          <a class="dropdown-item" href="{% url 'group:make' %}">make-group</a>
+          <a class="dropdown-item" href="{% url 'group:mine' %}">my-group</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">freinds-list</a>
         </div>
