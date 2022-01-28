@@ -23,5 +23,6 @@ urlpatterns = [
     path('tr/', include('tr.urls')),
     path('common/', include('common.urls')),
     path('group/', include('group.urls')),
-    path('', views.index, name='index'),  # '/' 에 해당되는 path
+    # path('', views.index, name='index'),  # '/' 에 해당되는 path
+    path('', views.main_page, name='main_page'),
 ]

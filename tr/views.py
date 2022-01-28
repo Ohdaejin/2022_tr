@@ -4,6 +4,10 @@ from .models import Question
 from .forms import QuestionForm, AnswerForm
 from django.core.paginator import Paginator
 
+def main_page(request):
+
+    return render(request, 'main_page.html')
+
 def index(request):
     """
     tr 목록 출력
