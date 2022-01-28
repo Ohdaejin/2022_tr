@@ -22,5 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('tr/', include('tr.urls')),
     path('common/', include('common.urls')),
+    path('group/', include('group.urls')),
     path('', views.index, name='index'),  # '/' 에 해당되는 path
 ]
