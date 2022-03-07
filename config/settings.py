@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'django_extensions',
     'group.apps.GroupConfig',
     'common.apps.CommonConfig',
     'tr.apps.TrConfig',
@@ -140,3 +141,6 @@ LOGIN_REDIRECT_URL = '/'
 
 # 로그아웃시 이동하는 URL
 LOGOUT_REDIRECT_URL = '/'
+
+# django-extensions를 위한 코드
+GRAPH_MODELS = { 'all_applications': True, 'group_models': True, }
